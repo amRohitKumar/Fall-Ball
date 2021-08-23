@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#game{
+    width: 400px;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+    z-index: 1;
+}
+
+#scoreBoard{
+    position: relative;
+    border: 1px solid black;
+    height: max-content;
+    width: 400px;
+    padding: 0.5em;
+    margin: auto;
+    margin-top: 2em;
+    z-index: 999;
+    background-color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#character{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    top: 400px;
+    z-index: 2;
+}
+
+.block{
+    width: 400px;
+    height: 20px;
+    background-color: brown;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+    z-index: -1;
+}
+
+.hole{
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+}
+
+#dot{
+    height: 20px;
+    width: 2px;
+    border-radius: 10%;
+    margin-left: 0.5em;
+    align-items: center;
+    background-color: white;
+}
+
+.frotate{
+    animation: frotation 500ms infinite linear;
+}
+.brotate{
+    animation: brotation 500ms infinite linear;
+}
+.stop{
+    animation: stop 1s infinite linear;
+}
+
+@keyframes frotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+
+@keyframes brotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-359deg);
+    }
+}
+
+@keyframes stop {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+}

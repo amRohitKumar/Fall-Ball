@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: red;
+}
+
+#heading{
+    font-family: 'Press Start 2P', cursive, sans-serif;
+    display: flex;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+#difficultyLevel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Carter One', cursive;
+    align-items: center;
+    padding-top: 2em;
+    font-size: 2em;
+}
+
+#diffHeading{
+    display: flex;
+    font-size: 2.5rem;
+}
