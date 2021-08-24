@@ -15,7 +15,7 @@ body{
     font-size: 4rem;
     justify-content: center;
     align-items: center;
-    margin-top: 1em;
+    margin-top: 0.5em;
     text-align: center;
 }
 
@@ -23,9 +23,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'Carter One', cursive;
+    font-family: 'Carter One', cursive, sans-serif;
     align-items: center;
-    padding-top: 2em;
+    padding-top: 1em;
     font-size: 2em;
     height: 100%;
 }
@@ -36,6 +36,15 @@ body{
     text-align: center;
 }
 
+#options{
+    display: flex;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#options div{
+    margin-left: 1em;
+}
 .hideClas{
     display: none;
 }
@@ -45,6 +54,37 @@ body{
     justify-content: center;
     align-content: center;
     margin-top: 5em;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
     align-content: center;
+}
+
+#instructions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+
+#instructions h5{
+    font-size: 2em;
+    font-family: 'Carter One', cursive, sans-serif;
+}
+
+#showBtn svg{
+    margin: 0.7em;
+}
+
+#innerText{
+    display: flex;
+}
+
+#innerText h6{
+    font-size: 1.2em;
+    display: flex;
+    width: min-content;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: bold;
+    text-align: center;
 }

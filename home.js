@@ -6,7 +6,7 @@ window.mobileCheck = function() {
 
 let res = mobileCheck();
 if(res){
-    window.alert("THIS GAME IS NOT PHONE COMPATIBLE . USE DESKTOP.");
+    window.alert("CURRENTLY VERSION IS NOT PHONE COMPATIBLE . USE DESKTOP.");
 }
 
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
