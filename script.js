@@ -132,7 +132,8 @@ var blocks = setInterval(() => {
     var characterTop = parseFloat(window.getComputedStyle(character).getPropertyValue("top"));
     let drop = 0;
     if(characterTop <= 0){
-        alert(`Game over ! Score : " + ${(counter-9)}. Difficulty: ${lvlDes}`);
+        let fscore = counter - 9;
+        alert(`Game over ! Score : " + ${fscore}. Difficulty: ${lvlDes}`);
         clearInterval(blocks);
         window.location.replace("./index.html");
     }

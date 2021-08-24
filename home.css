@@ -43,7 +43,7 @@ body{
 }
 
 #options div{
-    margin-left: 1em;
+    margin-left: 0.5em;
 }
 .hideClas{
     display: none;
@@ -87,4 +87,11 @@ body{
     padding-right: 1em;
     font-weight: bold;
     text-align: center;
+}
+
+@media screen and (max-width: 550px){
+    #options{
+        display: flex;
+        flex-direction: column;
+    }
 }
