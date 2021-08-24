@@ -33,5 +33,5 @@ btn.addEventListener('click', () => {
         console.log("3");
         localStorage.setItem("barsSpeed", "1");
     }
-    window.location.replace("./index.html");
+    window.location.replace("./home.html");
 })

@@ -134,7 +134,7 @@ var blocks = setInterval(() => {
     if(characterTop <= 0){
         alert(`Game over ! Score : " + ${(counter-9)}. Difficulty: ${lvlDes}`);
         clearInterval(blocks);
-        window.location.replace("./home.html");
+        window.location.replace("./index.html");
     }
     for(var i = 0; i < currentBlocks.length; i++){
         let curr = currentBlocks[i];
