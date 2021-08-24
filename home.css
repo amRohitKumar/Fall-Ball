@@ -5,8 +5,7 @@
 }
 
 body{
-    background-image: url('./bg6.png');
-    background-repeat: no-repeat;
+    background: url('./bg8.png') no-repeat center fixed;
     background-size: cover;
 }
 
@@ -39,4 +38,13 @@ body{
 
 .hideClas{
     display: none;
+}
+
+#developer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5em;
+    margin-bottom: 1em;
+    align-content: center;
 }

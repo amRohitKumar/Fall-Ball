@@ -93,27 +93,37 @@ var gameWidth = parseFloat(window.getComputedStyle(game).getPropertyValue('width
 // console.log(gameHeight);
 
 var blocks = setInterval(() => {
-    const blockLast = document.getElementById('block'+ (counter-1));
-    const holeLast = document.getElementById('hole' + (counter-1));
+    const beforeBlockLast = document.getElementById('beforeBlock'+ (counter-1));
+    const afterBlockLast = document.getElementById('afterBlock'+ (counter-1));
+    // const holeLast = document.getElementById('hole' + (counter-1));
     
     if(counter > 0){
-        var blockLastTop = parseInt(window.getComputedStyle(blockLast).getPropertyValue("top"));
-        var holeLastTop = parseInt(window.getComputedStyle(holeLast).getPropertyValue('top'));
+        var beforeBlockLastTop = parseInt(window.getComputedStyle(beforeBlockLast).getPropertyValue("top"));
+        var afterBlockLastTop = parseInt(window.getComputedStyle(afterBlockLast).getPropertyValue('top'));
     }
-    if(blockLastTop < gameHeight-100 || counter == 0){
-        const block = document.createElement('div');
-        const hole = document.createElement('div');
-        block.classList.add("block");
-        hole.classList.add("hole");
-        block.id = "block"+counter;
-        hole.id = "hole" + counter;
-        block.style.top = blockLastTop + 100 + "px";
-        hole.style.top = holeLastTop + 100 + "px";
-        let random = Math.floor((Math.random()*(gameWidth-40))+1);
-        hole.style.left = `${random}px`;
+    if(beforeBlockLastTop < gameHeight-100 || counter == 0){
+        const beforeBlock = document.createElement('div');
+        const afterBlock = document.createElement('div');
+        // const hole = document.createElement('div');
+        beforeBlock.classList.add("beforeBlock");
+        afterBlock.classList.add("afterBlock");
+        // hole.classList.add("hole");
+        beforeBlock.id = "beforeBlock"+counter;
+        afterBlock.id = "afterBlock"+counter;
+        // hole.id = "hole" + counter;
         
-        game.appendChild(block);
-        game.appendChild(hole);
+        beforeBlock.style.top = beforeBlockLastTop + 100 + "px";
+        afterBlock.style.top = afterBlockLastTop + 100 + "px";
+        // hole.style.top = holeLastTop + 100 + "px";
+        let random = Math.floor((Math.random()*(gameWidth-40))+1); // [1, 360]
+        // hole.style.left = `${random}px`;
+        beforeBlock.style.width = random + "px";
+        afterBlock.style.width = (gameWidth - random - 40) + "px";
+        afterBlock.style.left = random + 40 + "px";
+        
+        game.appendChild(beforeBlock);
+        game.appendChild(afterBlock);
+        // game.appendChild(hole);
         currentBlocks.push(counter);
         counter++;
     }
@@ -122,28 +132,31 @@ var blocks = setInterval(() => {
     var characterTop = parseFloat(window.getComputedStyle(character).getPropertyValue("top"));
     let drop = 0;
     if(characterTop <= 0){
-        alert("Game over. Score : " + (counter -9));
+        alert(`Game over ! Score : " + ${(counter-9)}. Difficulty: ${lvlDes}`);
         clearInterval(blocks);
         window.location.replace("./home.html");
     }
     for(var i = 0; i < currentBlocks.length; i++){
         let curr = currentBlocks[i];
-        let ihole = document.getElementById("hole"+curr);
-        let iblock = document.getElementById("block"+curr);
-        let iblockTop = parseFloat(window.getComputedStyle(iblock).getPropertyValue('top'));
-        let iholeLeft = parseFloat(window.getComputedStyle(ihole).getPropertyValue('left'));
-        iblock.style.top = iblockTop - barsSpeed + "px";
-        ihole.style.top = iblockTop - barsSpeed + "px";
+        // let ihole = document.getElementById("hole"+curr);
+        let ibeforeBlock = document.getElementById("beforeBlock"+curr);
+        let iafterBlock = document.getElementById("afterBlock"+curr);
+        let iblockTop = parseFloat(window.getComputedStyle(ibeforeBlock).getPropertyValue('top'));
+        // let iholeLeft = parseFloat(window.getComputedStyle(ihole).getPropertyValue('left'));
+        let ibeforeblockleft = parseFloat(window.getComputedStyle(ibeforeBlock).getPropertyValue('width'));
+        ibeforeBlock.style.top = iblockTop - barsSpeed + "px";
+        iafterBlock.style.top = iblockTop - barsSpeed + "px";
+        // ihole.style.top = iblockTop - barsSpeed + "px";
 
         if(iblockTop < -20){
             currentBlocks.shift();
-            iblock.remove();
-            ihole.remove();
+            ibeforeBlock.remove();
+            iafterBlock.remove();
         }
 
         if(iblockTop - 20 <= characterTop && iblockTop > characterTop){
             drop++;
-            if(iholeLeft <=  characterLeft && iholeLeft+20 >= characterLeft){
+            if(ibeforeblockleft <=  characterLeft && ibeforeblockleft+20 >= characterLeft){
                 drop = 0;
             }
         }

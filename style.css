@@ -15,6 +15,7 @@ body{
     border: 2px solid black;
     margin: auto;
     z-index: 1;
+    backdrop-filter: blur(2px);
 }
 
 #scoreBoard{
@@ -53,15 +54,32 @@ body{
     z-index: -1;
 }
 
+.beforeBlock{
+    height: 20px;
+    background-image: url('./wood.jpg');
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.afterBlock{
+    height: 20px;
+    background-image: url('./wood.jpg');
+    position: relative;
+    top: 100px;
+    margin-top: -20px;
+}
+
 .hole{
     width: 40px;
     height: 20px;
     background-color: rgb(194, 236, 132);
-    background-size: 50% ;
     position: relative;
     top: 100px;
     margin-top: -20px;
-    z-index: 0;
+    z-index: 0;     
 }
 
 #dot{

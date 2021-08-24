@@ -5,12 +5,14 @@ window.mobileCheck = function() {
 };
 
 let res = mobileCheck();
-// console.log(res);
 if(res){
     window.alert("THIS GAME IS NOT PHONE COMPATIBLE . USE DESKTOP.");
 }
 
-
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 
 
 const btn = document.getElementById('start');
