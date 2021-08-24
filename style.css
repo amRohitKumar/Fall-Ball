@@ -3,10 +3,16 @@
     margin: 0;
 }
 
+body{
+    background-image: url('./bg2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #game{
     width: 400px;
     height: 500px;
-    border: 1px solid black;
+    border: 2px solid black;
     margin: auto;
     z-index: 1;
 }
@@ -20,9 +26,11 @@
     margin: auto;
     margin-top: 2em;
     z-index: 999;
-    background-color: white;
+    /* background-color: rgb(237, 240, 78); */
+    background: linear-gradient(to bottom right, #fdfc47, #24fe41);
     text-align: center;
     font-size: xx-large;
+    /* background: transparent */
 }
 
 #character{
@@ -38,7 +46,7 @@
 .block{
     width: 400px;
     height: 20px;
-    background-color: brown;
+    background-image: url('./wood.jpg');
     position: relative;
     top: 100px;
     margin-top: -20px;
@@ -48,10 +56,12 @@
 .hole{
     width: 40px;
     height: 20px;
-    background-color: white;
+    background-color: rgb(194, 236, 132);
+    background-size: 50% ;
     position: relative;
     top: 100px;
     margin-top: -20px;
+    z-index: 0;
 }
 
 #dot{
@@ -61,6 +71,31 @@
     margin-left: 0.5em;
     align-items: center;
     background-color: white;
+}
+
+#controlBtn{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em;
+    margin-top: 2em;
+}
+
+#left{
+    width: 2em;
+    height: 2em;
+    background: transparent;
+    border: none;
+}
+
+#right{
+    width: 2em;
+    height: 2em;
+    background: transparent;
+    border: none;
+}
+
+.hideClas{
+    display: none;
 }
 
 .frotate{
@@ -97,5 +132,23 @@
     }
     to {
       transform: rotate(0deg);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #game{
+        width: 90%;
+        height: 50vh;
+    }
+    #scoreBoard{
+        display: flex;
+        width: 90%;
+        height: max-content;
+    }
+    .block{
+        width: 100%;
+    }
+    #character{
+        top: 200px;
     }
 }
