@@ -20,6 +20,10 @@ else if(barsSpeed === 1){
     lvlDes = "HARD";
 }
 
+let prevScore = JSON.parse(localStorage.getItem("prevScore"));
+
+
+
 // const leftBtn = document.getElementById('left');
 // const rightBtn = document.getElementById('right');
 
@@ -133,7 +137,17 @@ var blocks = setInterval(() => {
     let drop = 0;
     if(characterTop <= 0){
         let fscore = counter - 9;
-        alert(`Game over ! Score : " + ${fscore}. Difficulty: ${lvlDes}`);
+        alert(`Game over ! Score : ${fscore}. Difficulty: ${lvlDes}`);
+        if(lvlDes === "EASY" && prevScore[0] < fscore){
+            prevScore[0] = fscore;
+        }
+        else if(lvlDes === "MEDIUM" && prevScore[1] < fscore){
+            prevScore[1] = fscore;
+        }
+        else if(lvlDes === "HARD" && prevScore[2] < fscore){
+            prevScore[2] = fscore;
+        }
+        localStorage.setItem("prevScore", JSON.stringify(prevScore));
         clearInterval(blocks);
         window.location.replace("./index.html");
     }

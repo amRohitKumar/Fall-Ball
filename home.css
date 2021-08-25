@@ -58,15 +58,32 @@ body{
     align-content: center;
 }
 
-#instructions{
+#lowerDiv{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 3em;
 }
 
-#instructions h5{
+#instructions{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 3em;
+}
+
+#prevScore{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+#instructions h5, #prevScore h5{
+    text-align: left;
     font-size: 2em;
     font-family: 'Carter One', cursive, sans-serif;
 }
@@ -89,9 +106,21 @@ body{
     text-align: center;
 }
 
+#prevScore div{
+    font-size: 1.5em;
+    font-weight: bold;
+    
+}
+
 @media screen and (max-width: 550px){
     #options{
         display: flex;
         flex-direction: column;
+    }
+    #lowerDiv{
+        flex-direction: column;
+    }
+    #instructions{
+        margin-bottom: 2em;
     }
 }
