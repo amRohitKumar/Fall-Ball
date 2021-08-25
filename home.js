@@ -14,11 +14,11 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 var prevScoreArr = ['-', '-', '-'];
-let prevScore = JSON.parse(localStorage.getItem("prevScore"));
+let prevScore = JSON.parse(window.localStorage.getItem("prevScore"));
 if(prevScore == null){
     localStorage.setItem("prevScore", JSON.stringify(prevScoreArr));
 }
-prevScore = JSON.parse(localStorage.getItem("prevScore"));
+prevScore = JSON.parse(window.localStorage.getItem("prevScore"));
 
 const btn = document.getElementById('start');
 const easyScore = document.getElementById('easyPrevScore');
