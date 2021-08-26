@@ -46,5 +46,5 @@ btn.addEventListener('click', () => {
         console.log("3");
         localStorage.setItem("barsSpeed", "1");
     }
-    window.location.replace("./home.html");
+    window.location.href = "./home.html";
 })

@@ -147,9 +147,12 @@ var blocks = setInterval(() => {
         else if(lvlDes === "HARD" && prevScore[2] < fscore){
             prevScore[2] = fscore;
         }
-        localStorage.setItem("prevScore", JSON.stringify(prevScore));
+        let tempArr = JSON.stringify(prevScore);
+        window.localStorage.setItem("prevScore", tempArr);
         clearInterval(blocks);
-        window.location.href = "./index.html";
+        setInterval(() => {
+            window.location.href = "./index.html";
+        }, 100);
     }
     for(var i = 0; i < currentBlocks.length; i++){
         let curr = currentBlocks[i];
