@@ -150,9 +150,7 @@ var blocks = setInterval(() => {
         localStorage.setItem("prevScore", tempArr);
         alert(`Game over ! Score : ${fscore}. Difficulty: ${lvlDes}`);
         clearInterval(blocks);
-        setInterval(() => {
-            window.location.href = "./index.html";
-        }, 100);
+        window.location.href = "./index.html";
     }
     for(var i = 0; i < currentBlocks.length; i++){
         let curr = currentBlocks[i];
