@@ -137,7 +137,6 @@ var blocks = setInterval(() => {
     let drop = 0;
     if(characterTop <= 0){
         let fscore = counter - 9;
-        alert(`Game over ! Score : ${fscore}. Difficulty: ${lvlDes}`);
         if(lvlDes === "EASY" && prevScore[0] < fscore){
             prevScore[0] = fscore;
         }
@@ -149,6 +148,7 @@ var blocks = setInterval(() => {
         }
         let tempArr = JSON.stringify(prevScore);
         localStorage.setItem("prevScore", tempArr);
+        alert(`Game over ! Score : ${fscore}. Difficulty: ${lvlDes}`);
         clearInterval(blocks);
         setInterval(() => {
             window.location.href = "./index.html";
