@@ -20,7 +20,7 @@ else if(barsSpeed === 1){
     lvlDes = "HARD";
 }
 
-let prevScore = JSON.parse(window.localStorage.getItem("prevScore"));
+let prevScore = JSON.parse(localStorage.getItem("prevScore"));
 
 
 
@@ -148,7 +148,7 @@ var blocks = setInterval(() => {
             prevScore[2] = fscore;
         }
         let tempArr = JSON.stringify(prevScore);
-        window.localStorage.setItem("prevScore", tempArr);
+        localStorage.setItem("prevScore", tempArr);
         clearInterval(blocks);
         setInterval(() => {
             window.location.href = "./index.html";
